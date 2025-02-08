@@ -197,59 +197,76 @@
         }
 
         /* Hero Section */
-        .hero {
-            margin-top: 100px;
-            padding-left: 20px;
-            padding-right: 20px;
-            height: auto;
-            background: var(--sc-gradient);
-            color: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
+/* About Section */
+.hero {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #ff3d3d, #e81c81);
+    color: white;
+    text-align: center;
+}
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(45deg);
-            top: -50%;
-            left: -50%;
-            animation: wave 8s infinite linear;
-        }
+/* About Content */
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+    gap: 30px;
+}
 
-        @keyframes wave {
-            0% { transform: rotate(45deg) translate(0, 0); }
-            100% { transform: rotate(45deg) translate(100%, 100%); }
-        }
+/* Profile Image */
+.about-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-        .hero-content {
-            z-index: 1;
-            padding: 0rem;
-        }
+/* Text Content */
+.about-content {
+    flex: 1;
+    text-align: left;
+}
 
-        .hero h1 {
-            padding-top: 20px;
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
 
-            color: white; /* Text color */
-            font-family :Georgia, 'Times New Roman', Times, serif;
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1s ease-out;
-        }
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
 
-        .hero p {
-            color: white; /* Text color */
-            font-family : Georgia, 'Times New Roman', Times, serif;
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out;
-        }
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+}
+
 
         /* Social Links */
         .social-links {
@@ -278,7 +295,7 @@
         }
 
         .section-title {
-            
+            color: #e81c81;
             text-align: center;
             font-size: 2rem;
             margin-bottom: 3rem;
@@ -497,9 +514,8 @@
 
 <header class="header">
         <div class="header-content">
-            <a href="#home" class="logo">
-                <i class="fas fa-code"></i>
-                <span>Rakib Hossain</span>
+            <a href="#about" class="logo">
+                <span>Welcome to Rakib Hossain Portfolio</span>
             </a>
             <nav class="nav-links">
                 <a href="#about" style="color: #eee;">About</a>
@@ -568,35 +584,41 @@
         });
     </script>
 
-    <div  id="about" class="hero">
-        <div class="hero-content">
-            <h1>Rakib Hossain</h1>
-             <div class="about-content">
+ <div id="about" class="hero">
+    <div class="hero-content">
+        <div class="about-image">
+            <img src="https://avatars.githubusercontent.com/u/109984220?s=400&u=830ae2d7210f7a7b6ca3efbe266e2d99faf79e86&v=4" alt="Rakib Hossain">
+        </div>
+        <div class="about-content">
             <h2>🚀 About Me</h2>
-            <h2>Android Developer & Web Developer | Mobile App Expert</h2><br>
+            <h3>Android Developer & Web Developer | Mobile App Expert</h3><br>
             <p>
                 Hi, I’m a passionate <strong>Android App Developer, Website Developer, 
                 and Mobile App Expert</strong> with <strong>3+ years</strong> of experience in building 
                 high-quality, scalable, and user-friendly applications.
-            </p>
+            </p><br>
             <p>
                 I specialize in <strong>Android development using Java & Kotlin</strong>, crafting robust mobile applications 
                 with intuitive UI/UX. My web development expertise spans <strong>Python, HTML, CSS, JavaScript</strong>, enabling 
                 me to create <strong>dynamic and responsive websites</strong>. I also focus on backend development, 
                 database management, and API integration to power high-performance applications.
             </p>
-
-        </div>
-        
         </div>
     </div>
+</div>
+
 
     <!-- About Section -->
 
 
 
     <section id ="skills" class="skills">
-        <h2  class="section-title">My Skills</h2>
+        <h2  class="section-title">  
+            <div class="skills-header">
+        <i class="fas fa-tools">
+            My Skills
+        </i> <!-- Skills Logo -->
+    </div></h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <i class="fas fa-mobile-alt fa-2x" style="color: var(--light)"></i>
@@ -655,7 +677,10 @@
     </section>
 
     <section id="projects" class="projects">
-        <h2 class="section-title">My Featured Projects</h2>
+        <h2 class="section-title">
+            <i class="fas fa-laptop-code"> My Projects</i> <!-- Projects Logo -->
+
+        </h2>
         <div class="project-grid">
 
              <div class="project-card">
@@ -725,7 +750,7 @@ Users can promote their websites 📢 and earn money 💸 by playing exciting ga
     </section>
 
     <section id ="achievements" class="stats">
-        <h2 class="section-title">Achievements</h2>
+        <h2 class="section-title"><i class="fas fa-trophy"> Achievements </i> </h2>
         <div class="stats-grid">
             <div class="stat-card">
                 <i  class="fas fa-trophy stat-icon1"></i>
@@ -747,7 +772,7 @@ Users can promote their websites 📢 and earn money 💸 by playing exciting ga
     </section>
 
     <section id="contact" >
-        <h2 class="section-title">Connect With Me</h2>
+        <h2 class="section-title">📞 Connect With Me</h2>
           <div class="social-links">
                 <a href="https://github.com/RlM100always"><i class="fab fa-github fa-2x"></i></a>
                 <a href="https://www.linkedin.com/in/RlM100always"><i class="fab fa-linkedin fa-2x"></i></a>
@@ -755,7 +780,7 @@ Users can promote their websites 📢 and earn money 💸 by playing exciting ga
 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rakib100rlms@@gmail.com" target="_blank">
     <i class="fas fa-envelope fa-2x"></i>
 </a>
-<a href="https://wa.me/01782086907" target="_blank">
+<a href="https://wa.me/+8801782086907" target="_blank">
     <i class="fab fa-whatsapp fa-2x"></i>
 </a>
 
