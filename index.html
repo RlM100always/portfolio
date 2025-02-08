@@ -198,10 +198,10 @@
 
         /* Hero Section */
         .hero {
-           
-            height: 150vh;
+            padding-left: 50px;
+            padding-right: 20px;
+            height: 100vh;
             border-radius: 25px;
-            margin: 25px;
             background: var(--sc-gradient);
             color: var(--light);
             display: flex;
@@ -214,8 +214,8 @@
         .hero::after {
             content: '';
             position: absolute;
-            width: 200%;
-            height: 200%;
+            width: 100%;
+            height: 100%;
             background: rgba(255, 255, 255, 0.1);
             transform: rotate(45deg);
             top: -50%;
@@ -230,13 +230,13 @@
 
         .hero-content {
             z-index: 1;
-            padding: 2rem;
+            padding: 0rem;
         }
 
         .hero h1 {
+            padding-top: 50px;
+
             color: white; /* Text color */
-            -webkit-text-stroke: 2px black;
-            transform: scaleY(1.3);
             font-family :Georgia, 'Times New Roman', Times, serif;
             font-size: 4rem;
             margin-bottom: 1rem;
@@ -245,9 +245,6 @@
 
         .hero p {
             color: white; /* Text color */
-            -webkit-text-stroke: 0.1px black;
-                display: inline-block; 
-                transform: scaleY(1.1);
             font-family : Georgia, 'Times New Roman', Times, serif;
             font-size: 1.5rem;
             margin-bottom: 2rem;
@@ -256,6 +253,9 @@
 
         /* Social Links */
         .social-links {
+            border-radius: 12px;
+            padding: 8px;
+            background: var(--sc-gradient);
             display: flex;
             justify-content: center;
             gap: 1.5rem;
@@ -280,17 +280,14 @@
         .section-title {
             
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 3rem;
-            color: var(--sc-gradient);
             font-family :Georgia, 'Times New Roman', Times, serif;
+            
         }
 
         /* Skills */
-        .skills {
-
-            background: var(--fb-gradient);
-        }
+       
 
         h6{
             font-family :Georgia, 'Times New Roman', Times, serif;
@@ -329,10 +326,7 @@
             transform: translateY(-5px);
         }
 
-        /* Projects */
-        .projects {
-            background: var(--fb-gradient);
-        }
+       
 
         .project-grid {
             display: grid;
@@ -389,10 +383,7 @@
             background: var(--secondary);
         }
 
-        /* Stats */
-        .stats {
-            background: var(--fb-gradient);
-        }
+      
 
         .stats-grid {
             font-family :cursive;
@@ -452,14 +443,14 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
+                 font-family :Georgia, 'Times New Roman', Times, serif;
                 color: white; /* Text color */
-            -webkit-text-stroke: 0.7px black;
                 font-size: 3rem;
             }
             
             .hero p {
+                 font-family :Georgia, 'Times New Roman', Times, serif;
                 color: white; /* Text color */
-            -webkit-text-stroke: 0.5px black;
                 font-size: 1.25rem;
             }
 
@@ -484,7 +475,9 @@
 
 
 
-
+  strong{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
 
 
 
@@ -579,7 +572,7 @@
             <h3>Android Developer & Web Developer | Mobile App Expert</h3>
             <p>
                 Hi, I’m a passionate <strong>Android App Developer, Website Developer, 
-                and Mobile App Expert</strong> with <strong>4+ years</strong> of experience in building 
+                and Mobile App Expert</strong> with <strong>3+ years</strong> of experience in building 
                 high-quality, scalable, and user-friendly applications.
             </p>
             <p>
@@ -588,19 +581,9 @@
                 me to create <strong>dynamic and responsive websites</strong>. I also focus on backend development, 
                 database management, and API integration to power high-performance applications.
             </p>
-            <div class="skill-card">
-                <span>📱 Android (Java & Kotlin)</span>
-                <span>🌐 Web Development (Python, HTML, CSS, JS)</span>
-                <span>⚙️ API Integration</span>
-                <span>🔧 Backend & Database</span>
-            </div>
+
         </div>
-            <div class="social-links">
-                <a href="https://github.com/RlM100always"><i class="fab fa-github fa-3x"></i></a>
-                <a href="https://www.linkedin.com/in/RlM100always"><i class="fab fa-linkedin fa-3x"></i></a>
-                <a href="https://www.facebook.com/RlM100always"><i class="fab fa-facebook fa-3x"></i></a>
-                <a href="https://leetcode.com/RlM100always/"><i class="fas fa-code fa-3x"></i></a>
-            </div>
+        
         </div>
     </div>
 
@@ -609,7 +592,7 @@
 
 
     <section id ="skills" class="skills">
-        <h2  class="section-title">Skills & Technologies</h2>
+        <h2  class="section-title">My Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <i class="fas fa-mobile-alt fa-2x" style="color: var(--light)"></i>
@@ -624,7 +607,7 @@
             <div class="skill-card">
                 <i class="fas fa-database fa-2x" style="color: var(--light)"></i>
                 <h3 style="color: var(--light)" >Databases</h3>
-                <p style="color: var(--light)" >Firebase, SQLITE, MySQL,Postgesql <h6>{For CRUD Operation}</h6></p>
+                <p style="color: var(--light)" >Firebase, SQLITE, MySQL,Postgesql {For CRUD Operation}</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-paint-brush fa-2x" style="color: var(--light)""></i>
@@ -668,7 +651,7 @@
     </section>
 
     <section id="projects" class="projects">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">My Featured Projects</h2>
         <div class="project-grid">
 
              <div class="project-card">
@@ -677,32 +660,58 @@
                     <h3 style="color: var(--light); " class="project-title">UPBH: Unlimited Pdf Book House</h3>
                     <p  style="color: var(--light)" ; class="project-desc";>Unlimited PDF Book House is a versatile eBook Library Application! 📚
 With thousands of books available across multiple categories, it provides an engaging and user-friendly experience for book lovers.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >PlayStore</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >Github</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks&pcampaignid=web_share"  class="project-link" style="font-family: cursive" >PlayStore</a>
+                    <a href="https://github.com/RlM100always/UPBH-Unlimited-Pdf-Book-House"  class="project-link" style="font-family: cursive" >Github</a>
+                </div>
+            </div>
+              <div class="project-card">
+                <div class="project-content">
+                    <img src="https://d1ng1bucl7w66k.cloudfront.net/ghost-blog/2022/12/Screen-Shot-2022-12-15-at-11.20.48-AM.png" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: var(--light); " class="project-title">GlobalUniGuide</h3>
+                    <p  style="color: var(--light)" ; class="project-desc";>GlobalUniGuide is a comprehensive Educational Application designed for university students! 🎓
+Students can access detailed information about universities, practice words with a dictionary, take courses, and view exam results. 📚💡</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.alluniversityinformation"  class="project-link" style="font-family: cursive" >PlayStore</a>
+                    <a href="https://github.com/RlM100always/GlobalUniGuide"  class="project-link" style="font-family: cursive" >Github</a>
+                </div>
+            </div>
+              <div class="project-card">
+                <div class="project-content">
+                    <img src="https://www.shutterstock.com/image-photo/analyst-uses-computer-dashboard-data-600nw-2285412737.jpg" alt="SelfMe Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: var(--light); " class="project-title">SelfMe Android Application </h3>
+                    <p  style="color: var(--light)" ; class="project-desc";>SelfMe is an innovative Earning and Marketing Application! 🎯
+Users can promote their websites 📢 and earn money 💸 by playing exciting games. 🎮</p>
+                    <a href="https://drive.google.com/file/d/1l129EV-qURme2lS3GFmh675KM0KxHlaa/view"  class="project-link" style="font-family: cursive" >Download</a>
+                    <a href="https://github.com/RlM100always/EarningApp"  class="project-link" style="font-family: cursive" >Github</a>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-content">
-                    <img src="https://oeshighschool.com/wp-content/uploads/2021/12/Dec-Blog-Post-2.png" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-                    <h3 style="color: var(--light); " class="project-title">UPBH: Unlimited Pdf Book House</h3>
-                    <p  style="color: var(--light); class="project-desc">Unlimited PDF Book House is a versatile eBook Library Application! 📚
-With thousands of books available across multiple categories, it provides an engaging and user-friendly experience for book lovers.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >PlayStore</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >Github</a>
-                </div>
-            </div>
+
+
 
             <div class="project-card">
                 <div class="project-content">
-                    <img src="https://play-lh.googleusercontent.com/IhDH7Sal7z9eDfkL1yTZYQIRdr3iLAqKumiYmtS461iEA0XRGve-2ucKXt-TXIK4Bg=w526-h296-rw" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-                    <h3 style="color: var(--light); " class="project-title">UPBH: Unlimited Pdf Book House</h3>
-                    <p  style="color: var(--light); class="project-desc">Unlimited PDF Book House is a versatile eBook Library Application! 📚
-With thousands of books available across multiple categories, it provides an engaging and user-friendly experience for book lovers.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >PlayStore</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >Github</a>
+                    <img src="https://www.shutterstock.com/image-photo/analyst-uses-computer-dashboard-data-600nw-2285412737.jpg" alt="SelfMe Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: var(--light); " class="project-title">SelfMe Android Application </h3>
+                    <p  style="color: var(--light)" ; class="project-desc";>SelfMe is an innovative Earning and Marketing Application! 🎯
+Users can promote their websites 📢 and earn money 💸 by playing exciting games. 🎮</p>
+                    <a href="https://drive.google.com/file/d/1l129EV-qURme2lS3GFmh675KM0KxHlaa/view"  class="project-link" style="font-family: cursive" >Download</a>
+                    <a href="https://github.com/RlM100always/EarningApp"  class="project-link" style="font-family: cursive" >Github</a>
                 </div>
             </div>
+
+
+            <div class="project-card">
+                <div class="project-content">
+                    <img src="https://www.shutterstock.com/image-photo/analyst-uses-computer-dashboard-data-600nw-2285412737.jpg" alt="SelfMe Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: var(--light); " class="project-title">SelfMe Android Application </h3>
+                    <p  style="color: var(--light)" ; class="project-desc";>SelfMe is an innovative Earning and Marketing Application! 🎯
+Users can promote their websites 📢 and earn money 💸 by playing exciting games. 🎮</p>
+                    <a href="https://drive.google.com/file/d/1l129EV-qURme2lS3GFmh675KM0KxHlaa/view"  class="project-link" style="font-family: cursive" >Download</a>
+                    <a href="https://github.com/RlM100always/EarningApp"  class="project-link" style="font-family: cursive" >Github</a>
+                </div>
+            </div>
+
+            
 
 
             
@@ -731,6 +740,16 @@ With thousands of books available across multiple categories, it provides an eng
                 <h3 style="color: aliceblue " >Problem Solver</h3>
             </div>
         </div>
+    </section>
+
+    <section id="media" >
+        <h2 class="section-title">Connect With Me</h2>
+          <div class="social-links">
+                <a href="https://github.com/RlM100always"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/RlM100always"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.facebook.com/RlM100always"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://leetcode.com/RlM100always/"><i class="fas fa-code fa-2x"></i></a>
+            </div>
     </section>
 
     <script>
