@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakib Hossain - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: rgb(247, 7, 7);
+            --secondary: #04e2fa;
+            --dark: #1f2937;
+            --light: rgb(255, 255, 255);
+            --sc-gradient : linear-gradient(135deg, rgba(245, 5, 5, 0.9), rgba(235, 3, 165, 0.824));
+        }
+
+        /* Noto Serif - Custom class */
+.noto-serif {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;  /* Adjust from 100 to 900 */
+  font-style: normal;
+}
+
+/* Roboto Slab - Custom class */
+.roboto-slab {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Adjust from 100 to 900 */
+  font-style: normal;
+}
+
+/* Anton - Custom class */
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+
+        /* Header Styles */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #d4145a, #fbb03b);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 8px;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: yellow;
+}
+
+.btn-contact {
+    background: white;
+    color: #d4145a;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+
+
+        body {
+            
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            top: -50%;
+            left: -50%;
+            animation: wave 8s infinite linear;
+        }
+
+        @keyframes wave {
+            0% { transform: rotate(45deg) translate(0, 0); }
+            100% { transform: rotate(45deg) translate(100%, 100%); }
+        }
+
+        .hero-content {
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family :cursive;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero p {
+            font-family :cursive;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-family :cursive;
+        }
+
+        /* Skills */
+        .skills {
+            
+            background:   var(--light);
+        }
+
+        h6{
+            font-family :cursive;
+        }
+        h3{
+            font-family :cursive;
+        }
+        p{
+            font-family :cursive;
+        }
+
+
+
+        .skills-grid {
+            font-family :cursive;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+      .skill-card {
+        font-family :cursive;
+    background: var(--sc-gradient);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.9s ease;
+}
+
+
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Projects */
+        .projects {
+            background:   var(--light);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            font-family :cursive;
+            background: var(--sc-gradient);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 1px 1px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-content {
+            font-family :cursive;
+            padding: 1rem;
+
+        }
+
+        .project-title {
+            font-family :cursive;
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            font-family :cursive;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .project-link {
+            margin-top: 0.5rem;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--light);
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--secondary);
+        }
+
+        /* Stats */
+        .stats {
+            background: white;
+        }
+
+        .stats-grid {
+            font-family :cursive;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+.stat-card {
+    font-family: cursive;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(245, 5, 5, 0.9), rgba(235, 3, 165, 0.71));
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .stat-icon1 {
+            font-size: 2.5rem;
+            color: rgb(255, 255, 255);
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+    <div class="header-content">
+        <a href="#home" class="logo">
+            <i class="fas fa-code"></i>
+            <span>Rakib Hossain</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact" class="btn-contact">Contact</a>
+        </nav>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Rakib Hossain</h1>
+            <p>
+                Hi, I’m Rakib Hossain, a passionate Android App Developer, Website Developer, and Mobile App Expert with 4 years of experience in building high-quality, scalable, and user-friendly applications. My expertise spans Android development, web development, API integration, and problem-solving, ensuring seamless digital experiences for users.
+I specialize in Android development using Java & Kotlin, crafting robust mobile applications with clean architecture and intuitive UI/UX. My web development skills extend to Python, HTML, CSS, and JavaScript, enabling me to create dynamic and responsive websites. I also have strong expertise in backend development, database management, and API integration to power high-performance applications.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/RlM100always"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/RlM100always"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/RlM100always"><i class="fab fa-facebook"></i></a>
+                <a href="https://leetcode.com/RlM100always/"><i class="fas fa-code"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <section class="skills">
+        <h2  class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt fa-2x" style="color: var(--light)"></i>
+                <h3 style="color: var(--light)" >Android Development</h3>
+                <p style="color: var(--light)">Kotlin & Java</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-code fa-2x" style="color: var(--light)""></i>
+                <h3 style="color: var(--light)" >Problem Solving</h3>
+                <p style="color: var(--light)" >C, C++</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database fa-2x" style="color: var(--light)"></i>
+                <h3 style="color: var(--light)" >Databases</h3>
+                <p style="color: var(--light)" >Firebase, SQLITE, MySQL,Postgesql <h6>{For CRUD Operation}</h6></p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-paint-brush fa-2x" style="color: var(--light)""></i>
+                <h3 style="color: var(--light)" >UI Design</h3>
+                <p style="color: var(--light)" >XML, HTML, CSS , Jetpack Compose ,Canva</p>
+            </div>
+             <div class="skill-card">
+                <i class="fa fa-share-square" style="color: var(--light)"></i>
+                <h3 style="color: var(--light)" >Networking</h3>
+                <p style="color: var(--light)" >Retrofiet , Volley  <h6>{Handelling API Request}</h6></p>
+            </div>
+            <div class="skill-card">
+
+                <i class="fa fa-star" style="color: var(--light)""></i>
+                <h3 style="color: var(--light)" >Tools</h3>
+                <p style="color: var(--light)" >Gradle,Vscode,Android Studio</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa fa-bullseye" aria-hidden="true"  style="color: var(--light)" ></i>
+                <h3 style="color: var(--light)"  >Image Handelling</h3>
+                <p style="color: var(--light)" >Picasso , Glide Library</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa fa-server" style="color: var(--light)""></i>
+                <h3 style="color: var(--light)">Animations</h3>
+                <p style="color: var(--light)" >Lottie Animations</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa fa-star" style="color: var(--light)""></i>
+                <h3 style="color: var(--light)">Web Development</h3>
+                <p style="color: var(--light)" >Language : Python</p>
+                <h6 style="color: var(--light)" >Framework : Django,FastAPI,Flask</h6>
+            </div>
+            <div class="skill-card">
+                <i class="fa fa-desktop" style="color: var(--light)""></i>
+                <h3 style="color: var(--light)">REST API Development</h3>
+                <p style="color: var(--light)">Language : Python</p>
+                <h6 style="color: var(--light)">Framework : Django,FastAPI,Flask</h6>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+
+             <div class="project-card">
+                <div class="project-content">
+                    <img src="https://img.freepik.com/premium-photo/colorful-books-collection-close-up-view_488220-50973.jpg" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: var(--light); " class="project-title">UPBH: Unlimited Pdf Book House</h3>
+                    <p  style="color: var(--light); class="project-desc">Unlimited PDF Book House is a versatile eBook Library Application! 📚
+With thousands of books available across multiple categories, it provides an engaging and user-friendly experience for book lovers.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >PlayStore</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >Github</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <img src="https://oeshighschool.com/wp-content/uploads/2021/12/Dec-Blog-Post-2.png" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: var(--light); " class="project-title">UPBH: Unlimited Pdf Book House</h3>
+                    <p  style="color: var(--light); class="project-desc">Unlimited PDF Book House is a versatile eBook Library Application! 📚
+With thousands of books available across multiple categories, it provides an engaging and user-friendly experience for book lovers.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >PlayStore</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >Github</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <img src="https://play-lh.googleusercontent.com/IhDH7Sal7z9eDfkL1yTZYQIRdr3iLAqKumiYmtS461iEA0XRGve-2ucKXt-TXIK4Bg=w526-h296-rw" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: var(--light); " class="project-title">UPBH: Unlimited Pdf Book House</h3>
+                    <p  style="color: var(--light); class="project-desc">Unlimited PDF Book House is a versatile eBook Library Application! 📚
+With thousands of books available across multiple categories, it provides an engaging and user-friendly experience for book lovers.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >PlayStore</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >Github</a>
+                </div>
+            </div>
+
+
+            
+
+           
+        </div>
+    </section>
+
+    <section class="stats">
+        <h2 class="section-title">Achievements</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i  class="fas fa-trophy stat-icon1"></i>
+                <h3 style="color: aliceblue "">GitHub Trophy Holder</h3>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-code-branch stat-icon1"></i>
+                <h3 style="color: aliceblue " >Open Source Contributor</h3>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-graduation-cap stat-icon1"></i>
+                <h3 style="color: aliceblue " >CS Student at DU</h3>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chart-line stat-icon1"></i>
+                <h3 style="color: aliceblue " >Problem Solver</h3>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll reveal animations
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.skill-card, .project-card, .stat-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const triggerBottom = window.innerHeight * 0.8;
+                
+                if (cardTop < triggerBottom) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
