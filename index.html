@@ -15,11 +15,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary: rgb(247, 7, 7);
-            --secondary: #04e2fa;
+            --primary: rgb(255, 255, 255);
+            --secondary: #08fa04;
             --dark: #1f2937;
             --light: rgb(255, 255, 255);
+            --red: rgb(251, 4, 4);
             --sc-gradient : linear-gradient(135deg, rgba(245, 5, 5, 0.9), rgba(235, 3, 165, 0.824));
+            --fb-gradient : linear-gradient(135deg, rgba(245, 241, 241, 0.795),rgba(245, 239, 239, 0.9));
         }
 
         /* Noto Serif - Custom class */
@@ -55,80 +57,137 @@
 
 
         /* Header Styles */
-.header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(135deg, #d4145a, #fbb03b);
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+           .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: var(--sc-gradient);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
 
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
+        .header-content {
+            max-width: 1200px;
+            margin: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-.logo i {
-    margin-right: 8px;
-    font-size: 24px;
-}
+        .nav-links {
+            
+            display: flex;
+            gap: 2rem;
+        }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
+        
 
-.nav-links a:hover {
-    color: yellow;
-}
+        .mobile-menu-btn {
+            display: none;
+            margin-right: 10px;
 
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
 
+        .mobile-menu-btn:hover {
+            color: var(--primary);
+        }
 
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
+        .mobile-menu {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 50%;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    .mobile-menu-btn {
-        display: block;
-    }
-}
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
 
+        .mobile-menu a {
+            display: block;
+            padding: 1rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
 
+        .mobile-menu a:hover {
+            background: var(--sc-gradient);
+            padding-left: 1.5rem;
+            color: var(--primary);
+        }
+
+       
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Animation for menu items */
+        .mobile-menu a {
+            animation: slideIn 0.3s ease forwards;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Stagger animation delays for menu items */
+        .mobile-menu a:nth-child(1) { animation-delay: 0.1s; }
+        .mobile-menu a:nth-child(2) { animation-delay: 0.2s; }
+        .mobile-menu a:nth-child(3) { animation-delay: 0.3s; }
+        .mobile-menu a:nth-child(4) { animation-delay: 0.4s; }
+        .mobile-menu a:nth-child(5) { animation-delay: 0.5s; }
 
         body {
             
@@ -139,14 +198,15 @@
 
         /* Hero Section */
         .hero {
-            
-            height: 100vh;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+           
+            height: 150vh;
+            border-radius: 25px;
+            margin: 25px;
+            background: var(--sc-gradient);
             color: var(--light);
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -174,6 +234,9 @@
         }
 
         .hero h1 {
+            color: white; /* Text color */
+            -webkit-text-stroke: 2px black;
+            transform: scaleY(1.3);
             font-family :Georgia, 'Times New Roman', Times, serif;
             font-size: 4rem;
             margin-bottom: 1rem;
@@ -181,6 +244,10 @@
         }
 
         .hero p {
+            color: white; /* Text color */
+            -webkit-text-stroke: 0.1px black;
+                display: inline-block; 
+                transform: scaleY(1.1);
             font-family : Georgia, 'Times New Roman', Times, serif;
             font-size: 1.5rem;
             margin-bottom: 2rem;
@@ -215,14 +282,14 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: var(--primary);
+            color: var(--sc-gradient);
             font-family :Georgia, 'Times New Roman', Times, serif;
         }
 
         /* Skills */
         .skills {
-            
-            background:   var(--light);
+
+            background: var(--fb-gradient);
         }
 
         h6{
@@ -238,7 +305,6 @@
 
 
         .skills-grid {
-            font-family :cursive;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
@@ -265,7 +331,7 @@
 
         /* Projects */
         .projects {
-            background:   var(--light);
+            background: var(--fb-gradient);
         }
 
         .project-grid {
@@ -296,7 +362,7 @@
         }
 
         .project-title {
-            font-family :cursive;
+            font-family :Georgia, 'Times New Roman', Times, serif;
             font-size: 1.25rem;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -325,7 +391,7 @@
 
         /* Stats */
         .stats {
-            background: white;
+            background: var(--fb-gradient);
         }
 
         .stats-grid {
@@ -344,6 +410,7 @@
     background: linear-gradient(135deg, rgba(245, 5, 5, 0.9), rgba(235, 3, 165, 0.71));
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
     color: white;
 }
 
@@ -385,10 +452,14 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
+                color: white; /* Text color */
+            -webkit-text-stroke: 0.7px black;
                 font-size: 3rem;
             }
             
             .hero p {
+                color: white; /* Text color */
+            -webkit-text-stroke: 0.5px black;
                 font-size: 1.25rem;
             }
 
@@ -396,45 +467,148 @@
                 padding: 3rem 1rem;
             }
         }
+
+
+
+
+
+
+    
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </style>
 </head>
-<body>
-    <header class="header">
-    <div class="header-content">
-        <a href="#home" class="logo">
-            <i class="fas fa-code"></i>
-            <span>Rakib Hossain</span>
-        </a>
-        <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#contact" class="btn-contact">Contact</a>
-        </nav>
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-</header>
 
-    <div class="hero">
+
+<header class="header">
+        <div class="header-content">
+            <a href="#home" class="logo">
+                <i class="fas fa-code"></i>
+                <span>Rakib Hossain</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#about" style="color: #eee;">About</a>
+                <a  href="#skills"style="color: #eee;">Skills</a>
+                <a  href="#projects" style="color: #eee;">Projects</a>
+                <a  href="#achievements" style="color: #eee;">Achievements</a>
+                <a href="#contact" style="color: #eee;">Contact</a>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact" class="btn-contact">Contact</a>
+    </div>
+
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        let isMenuOpen = false;
+
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('active');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && isMenuOpen) {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
+                isMenuOpen = false;
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
+                isMenuOpen = false;
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
+                isMenuOpen = false;
+            }
+        });
+    </script>
+
+    <div  id="about" class="hero">
         <div class="hero-content">
             <h1>Rakib Hossain</h1>
+             <div class="about-content">
+            <h2>🚀 About Me</h2>
+            <h3>Android Developer & Web Developer | Mobile App Expert</h3>
             <p>
-                Hi, I’m Rakib Hossain, a passionate Android App Developer, Website Developer, and Mobile App Expert with 4 years of experience in building high-quality, scalable, and user-friendly applications. My expertise spans Android development, web development, API integration, and problem-solving, ensuring seamless digital experiences for users.
-I specialize in Android development using Java & Kotlin, crafting robust mobile applications with clean architecture and intuitive UI/UX. My web development skills extend to Python, HTML, CSS, and JavaScript, enabling me to create dynamic and responsive websites. I also have strong expertise in backend development, database management, and API integration to power high-performance applications.
+                Hi, I’m a passionate <strong>Android App Developer, Website Developer, 
+                and Mobile App Expert</strong> with <strong>4+ years</strong> of experience in building 
+                high-quality, scalable, and user-friendly applications.
             </p>
+            <p>
+                I specialize in <strong>Android development using Java & Kotlin</strong>, crafting robust mobile applications 
+                with intuitive UI/UX. My web development expertise spans <strong>Python, HTML, CSS, JavaScript</strong>, enabling 
+                me to create <strong>dynamic and responsive websites</strong>. I also focus on backend development, 
+                database management, and API integration to power high-performance applications.
+            </p>
+            <div class="skill-card">
+                <span>📱 Android (Java & Kotlin)</span>
+                <span>🌐 Web Development (Python, HTML, CSS, JS)</span>
+                <span>⚙️ API Integration</span>
+                <span>🔧 Backend & Database</span>
+            </div>
+        </div>
             <div class="social-links">
-                <a href="https://github.com/RlM100always"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/RlM100always"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.facebook.com/RlM100always"><i class="fab fa-facebook"></i></a>
-                <a href="https://leetcode.com/RlM100always/"><i class="fas fa-code"></i></a>
+                <a href="https://github.com/RlM100always"><i class="fab fa-github fa-3x"></i></a>
+                <a href="https://www.linkedin.com/in/RlM100always"><i class="fab fa-linkedin fa-3x"></i></a>
+                <a href="https://www.facebook.com/RlM100always"><i class="fab fa-facebook fa-3x"></i></a>
+                <a href="https://leetcode.com/RlM100always/"><i class="fas fa-code fa-3x"></i></a>
             </div>
         </div>
     </div>
 
-    <section class="skills">
+    <!-- About Section -->
+
+
+
+    <section id ="skills" class="skills">
         <h2  class="section-title">Skills & Technologies</h2>
         <div class="skills-grid">
             <div class="skill-card">
@@ -458,34 +632,34 @@ I specialize in Android development using Java & Kotlin, crafting robust mobile 
                 <p style="color: var(--light)" >XML, HTML, CSS , Jetpack Compose ,Canva</p>
             </div>
              <div class="skill-card">
-                <i class="fa fa-share-square" style="color: var(--light)"></i>
+                <i class="fa fa-share-square fa-2x" style="color: var(--light)"></i>
                 <h3 style="color: var(--light)" >Networking</h3>
-                <p style="color: var(--light)" >Retrofiet , Volley  <h6>{Handelling API Request}</h6></p>
+                <p style="color: var(--light)" >Retrofiet , Volley  <h6 style="color: var(--light)" >{Handelling API Request}</h6></p>
             </div>
             <div class="skill-card">
 
-                <i class="fa fa-star" style="color: var(--light)""></i>
+                <i class="fa fa-star fa-2x" style="color: var(--light)""></i>
                 <h3 style="color: var(--light)" >Tools</h3>
                 <p style="color: var(--light)" >Gradle,Vscode,Android Studio</p>
             </div>
             <div class="skill-card">
-                <i class="fa fa-bullseye" aria-hidden="true"  style="color: var(--light)" ></i>
+                <i class="fa fa-bullseye fa-2x" aria-hidden="true"  style="color: var(--light)" ></i>
                 <h3 style="color: var(--light)"  >Image Handelling</h3>
                 <p style="color: var(--light)" >Picasso , Glide Library</p>
             </div>
             <div class="skill-card">
-                <i class="fa fa-server" style="color: var(--light)""></i>
+                <i class="fa fa-server fa-2x" style="color: var(--light)""></i>
                 <h3 style="color: var(--light)">Animations</h3>
                 <p style="color: var(--light)" >Lottie Animations</p>
             </div>
             <div class="skill-card">
-                <i class="fa fa-star" style="color: var(--light)""></i>
+                <i class="fa fa-star fa-2x" style="color: var(--light)""></i>
                 <h3 style="color: var(--light)">Web Development</h3>
                 <p style="color: var(--light)" >Language : Python</p>
                 <h6 style="color: var(--light)" >Framework : Django,FastAPI,Flask</h6>
             </div>
             <div class="skill-card">
-                <i class="fa fa-desktop" style="color: var(--light)""></i>
+                <i class="fa fa-desktop fa-2x" style="color: var(--light)""></i>
                 <h3 style="color: var(--light)">REST API Development</h3>
                 <p style="color: var(--light)">Language : Python</p>
                 <h6 style="color: var(--light)">Framework : Django,FastAPI,Flask</h6>
@@ -493,7 +667,7 @@ I specialize in Android development using Java & Kotlin, crafting robust mobile 
         </div>
     </section>
 
-    <section class="projects">
+    <section id="projects" class="projects">
         <h2 class="section-title">Featured Projects</h2>
         <div class="project-grid">
 
@@ -501,7 +675,7 @@ I specialize in Android development using Java & Kotlin, crafting robust mobile 
                 <div class="project-content">
                     <img src="https://img.freepik.com/premium-photo/colorful-books-collection-close-up-view_488220-50973.jpg" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
                     <h3 style="color: var(--light); " class="project-title">UPBH: Unlimited Pdf Book House</h3>
-                    <p  style="color: var(--light); class="project-desc">Unlimited PDF Book House is a versatile eBook Library Application! 📚
+                    <p  style="color: var(--light)" ; class="project-desc";>Unlimited PDF Book House is a versatile eBook Library Application! 📚
 With thousands of books available across multiple categories, it provides an engaging and user-friendly experience for book lovers.</p>
                     <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >PlayStore</a>
                     <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks"  class="project-link" style="font-family: cursive" >Github</a>
@@ -537,7 +711,7 @@ With thousands of books available across multiple categories, it provides an eng
         </div>
     </section>
 
-    <section class="stats">
+    <section id ="achievements" class="stats">
         <h2 class="section-title">Achievements</h2>
         <div class="stats-grid">
             <div class="stat-card">
