@@ -14,46 +14,9 @@
     <title> Rakib Hossain - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary: rgb(255, 255, 255);
-            --secondary: #f2fa04;
-            --dark: #1f2937;
-            --light: rgb(255, 255, 255);
-            --red: rgb(251, 4, 4);
-            --sc-gradient : linear-gradient(135deg, rgba(245, 5, 5, 0.9), rgba(235, 3, 165, 0.824));
-            --fb-gradient : linear-gradient(135deg, rgba(245, 241, 241, 0.795),rgba(245, 239, 239, 0.9));
-        }
 
-        /* Noto Serif - Custom class */
-.noto-serif {
-  font-family: "Noto Serif", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;  /* Adjust from 100 to 900 */
-  font-style: normal;
-}
-
-/* Roboto Slab - Custom class */
-.roboto-slab {
-  font-family: "Roboto Slab", serif;
-  font-optical-sizing: auto;
-  font-weight: 400; /* Adjust from 100 to 900 */
-  font-style: normal;
-}
-
-/* Anton - Custom class */
-.anton-regular {
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
+ 
+      
 
 
         /* Header Styles */
@@ -63,7 +26,7 @@
             left: 0;
             right: 0;
             height: 80px;
-            background: var(--sc-gradient);
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -110,13 +73,13 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--primary);
+            color: white;
             cursor: pointer;
             transition: color 0.3s ease;
         }
 
         .mobile-menu-btn:hover {
-            color: var(--primary);
+            color: white;
         }
 
         .mobile-menu {
@@ -153,7 +116,7 @@
         .mobile-menu a:hover {
             background: var(--sc-gradient);
             padding-left: 1.5rem;
-            color: var(--primary);
+            color: blue;
         }
 
        
@@ -196,309 +159,51 @@
             line-height: 1.6;
         }
 
-        /* Hero Section */
-/* About Section */
-.hero {
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #ff3d3d, #e81c81);
-    color: white;
-    text-align: center;
-}
 
-/* About Content */
-.hero-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-width: 1000px;
-    width: 100%;
-    gap: 30px;
-}
 
-/* Profile Image */
-.about-image img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 5px solid white;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
-/* Text Content */
-.about-content {
-    flex: 1;
-    text-align: left;
-}
 
-.about-content h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
 
-.about-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* Responsive for Mobile */
-@media (max-width: 768px) {
+         @media (max-width: 768px) {
     .hero-content {
-        flex-direction: column;
-        text-align: center;
+      flex-direction: column;
+      text-align: center;
     }
-
-    .about-image img {
-        width: 150px;
-        height: 150px;
+    .hero-image {
+      order: -1; /* Profile image moves above the text */
+      margin-bottom: 20px;
     }
-
-    .about-content h2 {
-        font-size: 1.8rem;
+    .hero-text {
+      text-align: center;
     }
-
-    .about-content p {
-        font-size: 1rem;
+    .download-cv {
+      display: block;
+      width: auto;
+      margin: 20px auto;
     }
-}
+  }
 
-
-        /* Social Links */
-        .social-links {
-            border-radius: 12px;
-            padding: 15px;
-            background: var(--sc-gradient);
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        .section-title {
-            color: #e81c81;
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            font-family :Georgia, 'Times New Roman', Times, serif;
-            
-        }
-
-        /* Skills */
-       
-
-        h6{
-            font-family :Georgia, 'Times New Roman', Times, serif;
-        }
-        h3{
-            font-family :Georgia, 'Times New Roman', Times, serif;
-        }
-        p{
-            font-family :Georgia, 'Times New Roman', Times, serif;
-        }
+  @media (max-width: 480px) {
+    .hero-text h1 {
+      font-size: 28px;
+    }
+    .hero-text h2 {
+      font-size: 20px;
+    }
+    .hero-text p {
+      font-size: 14px;
+    }
+    .hero-image img {
+      width: 180px;
+      height: 180px;
+    }
+  }
 
 
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            max-width: 1500px;
-            margin: 0 auto;
-        }
-
-.skill-card {
-    font-weight: 900;
-
-    font-family :cursive;
-    background: var(--sc-gradient);
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.9s ease;
-}
-
-
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-       
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            font-family :cursive;
-            background: var(--sc-gradient);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 1px 1px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-content {
-            font-family :cursive;
-            padding: 1rem;
-
-        }
-
-        .project-title {
-            font-family :Georgia, 'Times New Roman', Times, serif;
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .project-desc {
-            font-family :Georgia, 'Times New Roman', Times, serif;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .project-link {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            margin-top: 0.5rem;
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--light);
-            color: black;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-
-        .project-link:hover {
-            background: var(--secondary);
-        }
-
-      
-
-        .stats-grid {
-            font-family :cursive;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-.stat-card {
-    font-family: cursive;
-    text-align: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(245, 5, 5, 0.9), rgba(235, 3, 165, 0.71));
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-    color: white;
-}
-
-
-        .stat-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        .stat-icon1 {
-            font-size: 2.5rem;
-            color: rgb(255, 255, 255);
-            margin-bottom: 1rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                 font-family :Georgia, 'Times New Roman', Times, serif;
-                color: white; /* Text color */
-                font-size: 3rem;
-            }
-            
-            .hero p {
-                 font-family :Georgia, 'Times New Roman', Times, serif;
-                color: white; /* Text color */
-                font-size: 1.25rem;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-        }
-
-
-
-
-
-
-    
-
-   
-
-
-
-
-
-
- p,h2,h3,h4,h5,h6,span{
-        font-family: Georgia, 'Times New Roman', Times, serif;
-
- }
 
   strong{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: yellow;
+    color: rgb(231, 231, 227);
   }
 
 
@@ -516,7 +221,7 @@
 <header class="header">
         <div class="header-content">
             <a href="#about" class="logo">
-                <span style="margin-left: 14px;">Welcome to Rakib Hossain Portfolio</span>
+                <span style="margin-left: 14px; color: white;">Welcome to My Portfolio</span>
             </a>
             <nav class="nav-links">
                 <a href="#about" style="color: #eee;">About</a>
@@ -532,6 +237,8 @@
         </div>
     </header>
 
+
+    
     <div class="mobile-menu">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -585,223 +292,255 @@
         });
     </script>
 
- <div id="about" class="hero">
-    <div class="hero-content">
-        <div class="about-image">
-            <img src="https://avatars.githubusercontent.com/u/109984220?s=400&u=830ae2d7210f7a7b6ca3efbe266e2d99faf79e86&v=4" alt="Rakib Hossain">
-        </div>
-        <div class="about-content">
-            <h2>🚀 About Me</h2>
-            <h3>Android Developer & Web Developer | Mobile App Expert</h3><br>
-            <p>
-                Hi, I’m a passionate <strong>Android App Developer, Website Developer, 
-                and Mobile App Expert</strong> with <strong>3+ years</strong> of experience in building 
-                high-quality, scalable, and user-friendly applications.
-            </p><br>
-            <p>
-                I specialize in <strong>Android development using Java & Kotlin</strong>, crafting robust mobile applications 
-                with intuitive UI/UX. My web development expertise spans <strong>Python, HTML, CSS, JavaScript</strong>, enabling 
-                me to create <strong>dynamic and responsive websites</strong>. I also focus on backend development, 
-                database management, and API integration to power high-performance applications.
-            </p>
-            <a href="https://drive.google.com/file/d/1_c5VHsD0ojWLrvEniRDuE5DE8372qLPL/view?usp=drive_link" download style=" 
-    display: inline-block; 
-    padding: 12px 24px; 
-    background: #f3e924; 
-    color: rgb(11, 11, 11); 
-    font-size: 18px; 
-    font-weight: bold; 
-    text-decoration: none; 
-    border-radius: 8px; 
-    margin-top: 10px;
-    border: none; 
-    cursor: pointer; 
-    transition: 0.3s;">
-    📄 Download CV
-</a>
-        </div>
+<section id="about" style="background: linear-gradient(135deg, #0f172a, #1e293b); padding: 60px 30px; text-align: center; color: white; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; ">
+  
+  <div class="hero-content" style="max-width: 1000px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; flex-direction: row; text-align: center;">
+
+    <!-- Profile Image -->
+    <div class="hero-image" style="flex: 1; text-align: center;">
+      <img src="https://avatars.githubusercontent.com/u/109984220?s=400&u=830ae2d7210f7a7b6ca3efbe266e2d99faf79e86&v=4" alt="Rakib Hossain"
+        style="border-radius: 50%; width: 220px; height: 220px; border: 5px solid #facc15; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);">
     </div>
-</div>
+
+    <!-- About Me Section -->
+    <div class="hero-text" style="flex: 2; text-align: left; max-width: 600px;">
+      <h1 style="font-size: 36px; font-weight: bold; color: #facc15; margin-bottom: 10px;">Rakib Hossain</h1>
+      <h2 style="font-size: 24px; font-weight: 500; color: #f8fafc; margin-bottom: 15px;">Android & Full-Stack Web Developer</h2>
+      <p style="font-size: 16px; line-height: 1.8; color: #e2e8f0; margin-bottom: 15px;">
+        A <strong>passionate developer</strong> with 3+ years of experience in <strong>Android</strong> and <strong>Web Development</strong>. I specialize in creating high-performance mobile apps and scalable web applications.
+      </p>
+
+      <!-- Skills Section -->
+      <h3 style="font-size: 22px; font-weight: bold; color: #facc15; margin-bottom: 10px;">Skills & Technologies</h3>
+      <p style="font-size: 16px; color: #e2e8f0; line-height: 1.6;">
+        <strong style="color: #facc15;">Mobile Development:</strong> Java, Kotlin, Jetpack Compose, Firebase <br>
+        <strong style="color: #facc15;">Web Development:</strong> Python, MySQL, PostgreSQL, HTML, CSS, FastAPI <br>
+        <strong style="color: #facc15;">Tools & Platforms:</strong> Android Studio, GitHub, REST APIs, Canva, VS Code
+      </p>
+
+      <!-- Projects Section -->
+      <h3 style="font-size: 22px; font-weight: bold; color: #facc15; margin-top: 20px;">Top Projects</h3>
+      <ul style="list-style: none; padding: 0; margin: 10px 0; font-size: 16px; line-height: 1.6;">
+        <li>📌 <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks" style="color: #facc15; text-decoration: none; font-weight: bold;">UPBH: Unlimited Pdf Book House</a></li>
+        <li>📌 <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.alluniversityinformation" style="color: #facc15; text-decoration: none; font-weight: bold;">GlobalUniGuide</a></li>
+        <li>📌 <a href="https://github.com/RlM100always/EarningApp" style="color: #facc15; text-decoration: none; font-weight: bold;">SelfMe: Earning & Marketing App</a></li>
+        <li>📌 <a href="https://github.com/RlM100always/District-Service-App" style="color: #facc15; text-decoration: none; font-weight: bold;">District Service App</a></li>
+      </ul>
+
+      <!-- Download CV Button -->
+      <a href="https://drive.google.com/file/d/1_c5VHsD0ojWLrvEniRDuE5DE8372qLPL/view?usp=drive_link"
+        class="download-cv"
+        style="display: inline-block; background: #facc15; color: #1e293b; font-size: 18px; font-weight: bold; padding: 14px 24px; border-radius: 30px; text-decoration: none; transition: 0.3s ease-in-out; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3); margin-top: 20px;">
+        📥 Download CV
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
 
 
     <!-- About Section -->
 
 
 
-    <section id ="skills" class="skills">
-        <h2  class="section-title">  
-            <div class="skills-header">
-        <i class="fas fa-tools">
-            M y   S k i l l s
-        </i> <!-- Skills Logo -->
-    </div></h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fas fa-mobile-alt fa-2x" style="color: var(--light)"></i>
-                <h3 style="color: var(--light)" >Android Development</h3>
-                <p style="color: var(--light)">Kotlin & Java</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-code fa-2x" style="color: var(--light)""></i>
-                <h3 style="color: var(--light)" >Problem Solving</h3>
-                <p style="color: var(--light)" >C, C++</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-database fa-2x" style="color: var(--light)"></i>
-                <h3 style="color: var(--light)" >Databases</h3>
-                <p style="color: var(--light)" >Firebase, SQLITE, MySQL,Postgesql {For CRUD Operation}</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-paint-brush fa-2x" style="color: var(--light)""></i>
-                <h3 style="color: var(--light)" >UI Design</h3>
-                <p style="color: var(--light)" >XML, HTML, CSS , Jetpack Compose ,Canva</p>
-            </div>
-             <div class="skill-card">
-                <i class="fa fa-share-square fa-2x" style="color: var(--light)"></i>
-                <h3 style="color: var(--light)" >Networking</h3>
-                <p style="color: var(--light)" >Retrofiet , Volley  <h6 style="color: var(--light)" >{Handelling API Request}</h6></p>
-            </div>
-            <div class="skill-card">
+<section id="skills" style="padding: 4rem 2rem; text-align: center; background : linear-gradient(135deg, #0f172a, #1e293b); color: white;">
+          <h1 style="font-size: 36px; font-weight: bold; color: #facc15; margin-bottom: 10px;">Skills</h1>
 
-                <i class="fa fa-star fa-2x" style="color: var(--light)""></i>
-                <h3 style="color: var(--light)" >Tools</h3>
-                <p style="color: var(--light)" >Gradle,Vscode,Android Studio</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa fa-bullseye fa-2x" aria-hidden="true"  style="color: var(--light)" ></i>
-                <h3 style="color: var(--light)"  >Image Handelling</h3>
-                <p style="color: var(--light)" >Picasso , Glide Library</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa fa-server fa-2x" style="color: var(--light)""></i>
-                <h3 style="color: var(--light)">Animations</h3>
-                <p style="color: var(--light)" >Lottie Animations</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa fa-star fa-2x" style="color: var(--light)""></i>
-                <h3 style="color: var(--light)">Web Development</h3>
-                <p style="color: var(--light)" >Language : Python</p>
-                <h6 style="color: var(--light)" >Framework : Django,FastAPI,Flask</h6>
-            </div>
-            <div class="skill-card">
-                <i class="fa fa-desktop fa-2x" style="color: var(--light)""></i>
-                <h3 style="color: var(--light)">REST API Development</h3>
-                <p style="color: var(--light)">Language : Python</p>
-                <h6 style="color: var(--light)">Framework : Django,FastAPI,Flask</h6>
-            </div>
+    <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
+        
+        <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  rgb(43, 42, 42); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <i class="fas fa-mobile-alt fa-2x" style="color: #2563eb;"></i>
+            <p style="margin-top: 12px; font-weight: bold; font-size: 1.2rem; color: white;">Android Development</p>
+            <p style="color: #bbb;">Kotlin & Java</p>
         </div>
-    </section>
 
-    <section id="projects" class="projects">
-        <h2 class="section-title">
-            <i class="fas fa-laptop-code"> M y   P r o j e c t s</i> <!-- Projects Logo -->
-
-        </h2>
-        <div class="project-grid">
-
-             <div class="project-card">
-                <div class="project-content">
-                    <img src="https://img.freepik.com/premium-photo/colorful-books-collection-close-up-view_488220-50973.jpg" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-                    <h3 style="color: var(--light); " class="project-title">UPBH: Unlimited Pdf Book House</h3>
-                    <p  style="color: var(--light)" ; class="project-desc";>Unlimited PDF Book House is a versatile eBook Library Application! 📚
-With thousands of books available across multiple categories, it provides an engaging and user-friendly experience for book lovers.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks&pcampaignid=web_share"  class="project-link" style="font-family: cursive" >PlayStore</a>
-                    <a href="https://github.com/RlM100always/UPBH-Unlimited-Pdf-Book-House"  class="project-link" style="font-family: cursive" >Github</a>
-                </div>
-            </div>
-              <div class="project-card">
-                <div class="project-content">
-                    <img src="https://d1ng1bucl7w66k.cloudfront.net/ghost-blog/2022/12/Screen-Shot-2022-12-15-at-11.20.48-AM.png" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-                    <h3 style="color: var(--light); " class="project-title">GlobalUniGuide</h3>
-                    <p  style="color: var(--light)" ; class="project-desc";>GlobalUniGuide is a comprehensive Educational Application designed for university students! 🎓
-Students can access detailed information about universities, practice words with a dictionary, take courses, and view exam results. 📚💡</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.alluniversityinformation"  class="project-link" style="font-family: cursive" >PlayStore</a>
-                    <a href="https://github.com/RlM100always/GlobalUniGuide"  class="project-link" style="font-family: cursive" >Github</a>
-                </div>
-            </div>
-              <div class="project-card">
-                <div class="project-content">
-                    <img src="https://www.shutterstock.com/image-photo/analyst-uses-computer-dashboard-data-600nw-2285412737.jpg" alt="SelfMe Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-                    <h3 style="color: var(--light); " class="project-title">SelfMe Android Application </h3>
-                    <p  style="color: var(--light)" ; class="project-desc";>SelfMe is an innovative Earning and Marketing Application! 🎯
-Users can promote their websites 📢 and earn money 💸 by playing exciting games. 🎮</p>
-                    <a href="https://drive.google.com/file/d/1l129EV-qURme2lS3GFmh675KM0KxHlaa/view"  class="project-link" style="font-family: cursive" >Download</a>
-                    <a href="https://github.com/RlM100always/EarningApp"  class="project-link" style="font-family: cursive" >Github</a>
-                </div>
-            </div>
-
-
-
-
-            <div class="project-card">
-                <div class="project-content">
-                    <img src="https://cdn-rdstaticassets.readdle.com/readdle/Blog/free-educational-apps/Resources%20for%20online%20learning.png" alt="SelfMe Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-                    <h3 style="color: var(--light); " class="project-title">BD University Information</h3>
-                    <p  style="color: var(--light)" ; class="project-desc";>Bangladesh University App is a comprehensive platform providing all information about universities in Bangladesh. 🎓</p>
-                    <a href="https://www.youtube.com/watch?si=zkC5REO7Js7YvLQe&v=zgWeWTUwv4U&feature=youtu.be"  class="project-link" style="font-family: cursive" >Video</a>
-                    <a href="https://github.com/RlM100always/Current-UniversityBD"  class="project-link" style="font-family: cursive" >Github</a>
-                </div>
-            </div>
-
-
-            <div class="project-card">
-                <div class="project-content">
-                    <img src="https://cdn.sketch.com/assets/blog/android-app-best-practices.png" alt="SelfMe Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-                    <h3 style="color: var(--light); " class="project-title">District Service </h3>
-                    <p  style="color: var(--light)" ; class="project-desc";>District Service is an Android app that provides information about all the districts in Bangladesh. It serves as a comprehensive guide for users to learn about every districts, their information ..</p>
-                    <a href="https://www.youtube.com/watch?v=Wt0VJZ8Yy14"  class="project-link" style="font-family: cursive" >Video</a>
-                    <a href="https://github.com/RlM100always/District-Service-App?tab=readme-ov-file"  class="project-link" >Github</a>
-                </div>
-            </div>
-
-            
-
-
-            
-
-           
+        <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  linear-gradient(135deg, #0f172a, #1e293b); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <i class="fas fa-code fa-2x" style="color: #e81c81;"></i>
+            <p style="margin-top: 12px; font-weight: bold; font-size: 1.2rem; color: white;">Problem Solving</p>
+            <p style="color: #bbb;">C, C++</p>
         </div>
-    </section>
 
-    <section id ="achievements" class="stats">
-        <h2 class="section-title"><i class="fas fa-trophy">  A c h i e v e m e n t s </i> </h2>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <i  class="fas fa-trophy stat-icon1"></i>
-                <h3 style="color: aliceblue "">GitHub Trophy Holder</h3>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-code-branch stat-icon1"></i>
-                <h3 style="color: aliceblue " >Open Source Contributor</h3>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-graduation-cap stat-icon1"></i>
-                <h3 style="color: aliceblue " >CS Student at DU</h3>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-chart-line stat-icon1"></i>
-                <h3 style="color: aliceblue " >Problem Solver</h3>
-            </div>
+        <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  linear-gradient(135deg, #0f172a, #1e293b); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <i class="fas fa-database fa-2x" style="color: #f59e0b;"></i>
+            <p style="margin-top: 12px; font-weight: bold; font-size: 1.2rem; color: white;">Databases</p>
+            <p style="color: #bbb;">Firebase, SQLite, MySQL, PostgreSQL</p>
         </div>
-    </section>
+        
+        <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  linear-gradient(135deg, #0f172a, #1e293b); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <i class="fas fa-paint-brush fa-2x" style="color: #22c55e;"></i>
+            <p style="margin-top: 12px; font-weight: bold; font-size: 1.2rem; color: white;">UI Design</p>
+            <p style="color: #bbb;">XML, HTML, CSS, Jetpack Compose, Canva</p>
+        </div>
+        
+        <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  linear-gradient(135deg, #0f172a, #1e293b); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <i class="fa fa-share-square fa-2x" style="color: #6d28d9;"></i>
+            <p style="margin-top: 12px; font-weight: bold; font-size: 1.2rem; color: white;">Networking</p>
+            <p style="color: #bbb;">Retrofit, Volley (API Handling)</p>
+        </div>
+        
+        <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  linear-gradient(135deg, #0f172a, #1e293b); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <i class="fa fa-star fa-2x" style="color: #ff9800;"></i>
+            <p style="margin-top: 12px; font-weight: bold; font-size: 1.2rem; color: white;">Tools</p>
+            <p style="color: #bbb;">Gradle, VS Code, Android Studio</p>
+        </div>
 
-    <section id="contact" >
-        <h2 class="section-title"> <i class="fas fa-tools">
-            C o n t a c t
-        </i></h2>
-          <div class="social-links">
-                <a href="https://github.com/RlM100always"><i class="fab fa-github fa-2x"></i></a>
-                <a href="https://www.linkedin.com/in/RlM100always"><i class="fab fa-linkedin fa-2x"></i></a>
-                <a href="https://www.facebook.com/RlM100always"><i class="fab fa-facebook fa-2x"></i></a>
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=rakib100rlms@@gmail.com" target="_blank">
-    <i class="fas fa-envelope fa-2x"></i>
-</a>
-<a href="https://wa.me/+8801782086907" target="_blank">
-    <i class="fab fa-whatsapp fa-2x"></i>
-</a>
+        <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  linear-gradient(135deg, #0f172a, #1e293b); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <i class="fa fa-bullseye fa-2x" style="color: #dc2626;"></i>
+            <p style="margin-top: 12px; font-weight: bold; font-size: 1.2rem; color: white;">Image Handling</p>
+            <p style="color: #bbb;">Picasso, Glide Library</p>
+        </div>
 
-            </div>
-    </section>
+        <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  linear-gradient(135deg, #0f172a, #1e293b); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <i class="fa fa-server fa-2x" style="color: #3b82f6;"></i>
+            <p style="margin-top: 12px; font-weight: bold; font-size: 1.2rem; color: white;">Animations</p>
+            <p style="color: #bbb;">Lottie Animations</p>
+        </div>
+
+        <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  linear-gradient(135deg, #0f172a, #1e293b); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <i class="fa fa-code fa-2x" style="color: #f97316;"></i>
+            <p style="margin-top: 12px; font-weight: bold; font-size: 1.2rem; color: white;">Web Development</p>
+            <p style="color: #bbb;">Python (Django, FastAPI, Flask)</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects" style="background:  linear-gradient(135deg, #0f172a, #1e293b); padding: 50px; text-align: center; color: white; font-family: Arial, sans-serif;">
+       <h1 style="font-size: 36px; font-weight: bold; color: #facc15; margin-bottom: 10px;">My Projects</h1>
+ 
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: auto;">
+        
+        <!-- Project 1 -->
+        <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
+            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20143749.png?raw=true" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+            <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 15px 0 10px;">UPBH: Unlimited Pdf Book House</h3>
+            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">A versatile eBook Library Application with thousands of books across multiple categories.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">PlayStore</a>
+            <a href="https://github.com/RlM100always/UPBH-Unlimited-Pdf-Book-House" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
+            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20142943.png?raw=true" alt="GlobalUniGuide Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+            <h3 style="font-size: 22px; font-weight: bold; margin: 15px 0 10px; color: white;">GlobalUniGuide</h3>
+            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">An educational app providing detailed university information, courses, dictionaries, and exam results.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.alluniversityinformation" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">PlayStore</a>
+            <a href="https://github.com/RlM100always/GlobalUniGuide" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
+        </div>
+
+        <!-- Project 3 -->
+        <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
+            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20143909.png?raw=true" alt="SelfMe Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+            <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 15px 0 10px;">SelfMe Android Application</h3>
+            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">An earning & marketing app where users can promote websites and earn by playing games.</p>
+            <a href="https://drive.google.com/file/d/1l129EV-qURme2lS3GFmh675KM0KxHlaa/view" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Download</a>
+            <a href="https://github.com/RlM100always/EarningApp" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
+        </div>
+
+        <!-- Project 4 -->
+        <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
+            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20143949.png?raw=true" alt="BD University Information" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+            <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 15px 0 10px;">BD University Information</h3>
+            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">A platform providing all information about universities in Bangladesh.</p>
+            <a href="https://www.youtube.com/watch?si=zkC5REO7Js7YvLQe&v=zgWeWTUwv4U&feature=youtu.be" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Video</a>
+            <a href="https://github.com/RlM100always/Current-UniversityBD" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
+        </div>
+         <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
+            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20144043.png?raw=true" alt="BD University Information" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+            <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 15px 0 10px;">District Service</h3>
+            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">District Service is an Android app that provides information about all the districts in Bangladesh. It serves as a comprehensive guide for users to learn about every districts, their information .. 
+            <a href="https://www.youtube.com/watch?v=Wt0VJZ8Yy14" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Youtube</a>
+            <a href="https://github.com/RlM100always/District-Service-App?tab=readme-ov-file" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="achievements"  style="background:  linear-gradient(135deg, #0f172a, #1e293b); padding: 60px 20px; text-align: center; color: white; ">
+    
+    <!-- Section Title -->
+    <h1 class="section-title" style="font-size: 32px; font-weight: bold; color: #facc15; margin-bottom: 30px;">
+        Achievements 
+    </h1>
+
+    <!-- Achievements Grid -->
+    <div class="stats-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto;">
+
+        <!-- GitHub Trophy Holder -->
+        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+            <i class="fas fa-trophy" style="font-size: 40px; color: #facc15; margin-bottom: 10px;"></i>
+            <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">GitHub Trophy Holder</h3>
+        </div>
+
+        <!-- Open Source Contributor -->
+        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+            <i class="fas fa-code-branch" style="font-size: 40px; color: #38bdf8; margin-bottom: 10px;"></i>
+            <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Open Source Contributor</h3>
+        </div>
+
+        <!-- CS Student at DU -->
+        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+            <i class="fas fa-graduation-cap" style="font-size: 40px; color: #34d399; margin-bottom: 10px;"></i>
+            <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">CS Student at DU</h3>
+        </div>
+
+        <!-- Problem Solver -->
+        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+            <i class="fas fa-chart-line" style="font-size: 40px; color: #f87171; margin-bottom: 10px;"></i>
+            <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Problem Solver</h3>
+        </div>
+
+        <!-- Professional Android Developer -->
+        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+            <i class="fas fa-mobile-alt" style="font-size: 40px; color: #facc15; margin-bottom: 10px;"></i>
+            <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Professional Android Developer</h3>
+        </div>
+
+        <!-- PHP Full-Stack Developer -->
+        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+            <i class="fas fa-server" style="font-size: 40px; color: #f87171; margin-bottom: 10px;"></i>
+            <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Python Full-Stack Developer</h3>
+        </div>
+
+        <!-- Published Android Apps -->
+        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+            <i class="fas fa-cloud-upload-alt" style="font-size: 40px; color: #34d399; margin-bottom: 10px;"></i>
+            <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Published Android Apps</h3>
+        </div>
+    </div>
+</section>
+
+
+
+    <section id="contact" style="background:  linear-gradient(135deg, #0f172a, #1e293b); padding: 60px 20px; text-align: center; color: white; ">
+    
+    <!-- Section Title -->
+      <h1 class="section-title" style="font-size: 32px; font-weight: bold; color: #facc15; margin-bottom: 30px;">
+        Contact 
+    </h1>
+
+    <!-- Social Links -->
+    <div class="social-links" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://github.com/RlM100always" style="color: white; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-github fa-3x" style="color: #facc15;"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/RlM100always" style="color: white; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-linkedin fa-3x" style="color: #38bdf8;"></i>
+        </a>
+        <a href="https://www.facebook.com/RlM100always" style="color: white; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-facebook fa-3x" style="color: #3b82f6;"></i>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rakib100rlms@@gmail.com" target="_blank" style="color: white; text-decoration: none; transition: 0.3s;">
+            <i class="fas fa-envelope fa-3x" style="color: #ef4444;"></i>
+        </a>
+        <a href="https://wa.me/+8801782086907" target="_blank" style="color: white; text-decoration: none; transition: 0.3s;">
+            <i class="fab fa-whatsapp fa-3x" style="color: #22c55e;"></i>
+        </a>
+    </div>
+
+</section>
 
     <script>
         // Add smooth scrolling
