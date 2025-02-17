@@ -152,52 +152,12 @@
         .mobile-menu a:nth-child(4) { animation-delay: 0.4s; }
         .mobile-menu a:nth-child(5) { animation-delay: 0.5s; }
 
-        body {
-            
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
+       
 
 
 
 
-
-
-         @media (max-width: 768px) {
-    .hero-content {
-      flex-direction: column;
-      text-align: center;
-    }
-    .hero-image {
-      order: -1; /* Profile image moves above the text */
-      margin-bottom: 20px;
-    }
-    .hero-text {
-      text-align: center;
-    }
-    .download-cv {
-      display: block;
-      width: auto;
-      margin: 20px auto;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-text h1 {
-      font-size: 28px;
-    }
-    .hero-text h2 {
-      font-size: 20px;
-    }
-    .hero-text p {
-      font-size: 14px;
-    }
-    .hero-image img {
-      width: 180px;
-      height: 180px;
-    }
-  }
+      
 
 
 
@@ -207,7 +167,14 @@
   }
 
 
-
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+        .mobile-menu-btn {
+            display: block !important;
+        }
+    }
 
 
 
@@ -236,8 +203,6 @@
             </button>
         </div>
     </header>
-
-
     
     <div class="mobile-menu">
         <a href="#about">About</a>
@@ -292,18 +257,29 @@
         });
     </script>
 
-<section id="about" style="background: linear-gradient(135deg, #0f172a, #1e293b); padding: 60px 30px; text-align: center; color: white; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; ">
+<section id="about" 
+style=" 
+    text-align: center; 
+    background: linear-gradient(135deg, #0f172a, #1e293b); 
+    color: white; 
+    width: 100%;
+    padding-left: 40px ;
+    padding-right: 30px;
+    box-sizing: border-box;">
   
-  <div class="hero-content" style="max-width: 1000px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; flex-direction: row; text-align: center;">
+  <div class="hero-content" 
+    style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto;"
 
-    <!-- Profile Image -->
-    <div class="hero-image" style="flex: 1; text-align: center;">
-      <img src="https://avatars.githubusercontent.com/u/109984220?s=400&u=830ae2d7210f7a7b6ca3efbe266e2d99faf79e86&v=4" alt="Rakib Hossain"
-        style="border-radius: 50%; width: 220px; height: 220px; border: 5px solid #facc15; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);">
+    <div class="hero-image" 
+      style="flex: 1; text-align: center; min-width: 270px; max-width: 100%;">
+      <img src="https://avatars.githubusercontent.com/u/109984220?s=400&u=830ae2d7210f7a7b6ca3efbe266e2d99faf79e86&v=4" 
+        alt="Rakib Hossain"
+        style="border-radius: 50%; width: 100%; max-width: 270px; height: auto; border: 5px solid #facc15; box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);">
     </div>
 
     <!-- About Me Section -->
-    <div class="hero-text" style="flex: 2; text-align: left; max-width: 600px;">
+    <div class="hero-text" 
+      style="flex: 2; text-align: left; max-width: 100%; min-width: 150px; padding: 20px;">
       <h1 style="font-size: 36px; font-weight: bold; color: #facc15; margin-bottom: 10px;">Rakib Hossain</h1>
       <h2 style="font-size: 24px; font-weight: 500; color: #f8fafc; margin-bottom: 15px;">Android & Full-Stack Web Developer</h2>
       <p style="font-size: 16px; line-height: 1.8; color: #e2e8f0; margin-bottom: 15px;">
@@ -313,18 +289,22 @@
       <!-- Skills Section -->
       <h3 style="font-size: 22px; font-weight: bold; color: #facc15; margin-bottom: 10px;">Skills & Technologies</h3>
       <p style="font-size: 16px; color: #e2e8f0; line-height: 1.6;">
-        <strong style="color: #facc15;">Mobile Development:</strong> Java, Kotlin, Jetpack Compose, Firebase <br>
-        <strong style="color: #facc15;">Web Development:</strong> Python, MySQL, PostgreSQL, HTML, CSS, FastAPI <br>
-        <strong style="color: #facc15;">Tools & Platforms:</strong> Android Studio, GitHub, REST APIs, Canva, VS Code
+        <strong style="color: #facc15;">Mobile App Development:</strong> Java, Kotlin, Jetpack Compose,Coroutines,MVVM Firebase <br>
+        <strong style="color: #facc15;">Web Development:</strong> Python, MySQL, PostgreSQL, HTML, CSS, FastAPI , (Basic Javascript) <br>
+        <strong style="color: #facc15;">Tools & Platforms:</strong> Android Studio, Git , GitHub, REST APIs, Canva, VS Code
       </p>
 
       <!-- Projects Section -->
       <h3 style="font-size: 22px; font-weight: bold; color: #facc15; margin-top: 20px;">Top Projects</h3>
       <ul style="list-style: none; padding: 0; margin: 10px 0; font-size: 16px; line-height: 1.6;">
-        <li>📌 <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks" style="color: #facc15; text-decoration: none; font-weight: bold;">UPBH: Unlimited Pdf Book House</a></li>
-        <li>📌 <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.alluniversityinformation" style="color: #facc15; text-decoration: none; font-weight: bold;">GlobalUniGuide</a></li>
-        <li>📌 <a href="https://github.com/RlM100always/EarningApp" style="color: #facc15; text-decoration: none; font-weight: bold;">SelfMe: Earning & Marketing App</a></li>
-        <li>📌 <a href="https://github.com/RlM100always/District-Service-App" style="color: #facc15; text-decoration: none; font-weight: bold;">District Service App</a></li>
+        <li>📌 <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks" 
+                style="color: #facc15; text-decoration: none; font-weight: bold;">UPBH: Unlimited Pdf Book House</a></li>
+        <li>📌 <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.alluniversityinformation" 
+                style="color: #facc15; text-decoration: none; font-weight: bold;">GlobalUniGuide</a></li>
+        <li>📌 <a href="https://github.com/RlM100always/EarningApp" 
+                style="color: #facc15; text-decoration: none; font-weight: bold;">SelfMe: Earning & Marketing App</a></li>
+        <li>📌 <a href="https://github.com/RlM100always/District-Service-App" 
+                style="color: #facc15; text-decoration: none; font-weight: bold;">District Service App</a></li>
       </ul>
 
       <!-- Download CV Button -->
@@ -341,14 +321,20 @@
 
 
 
+
     <!-- About Section -->
 
 
 
-<section id="skills" style="padding: 4rem 2rem; text-align: center; background : linear-gradient(135deg, #0f172a, #1e293b); color: white;">
+<section id="skills" 
+ style="background:  linear-gradient(135deg, #0f172a, #1e293b); padding: 60px 20px; text-align: center; color: rgb(248, 7, 7); "
+
+>
           <h1 style="font-size: 36px; font-weight: bold; color: #facc15; margin-bottom: 10px;">Skills</h1>
 
-    <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto;">
+    <div class="skills-grid"
+    style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto;"
+     >
         
         <div class="skill-card" style="background: linear-gradient(135deg, #0f172a, #1e293b); ; padding: 1.8rem; border-radius: 15px; text-align: center; box-shadow: 0px 10px 20px  rgb(43, 42, 42); ; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
             <i class="fas fa-mobile-alt fa-2x" style="color: #2563eb;"></i>
@@ -406,59 +392,79 @@
     </div>
 </section>
 
-<section id="projects" style="background:  linear-gradient(135deg, #0f172a, #1e293b); padding: 50px; text-align: center; color: white; font-family: Arial, sans-serif;">
+<section id="projects" 
+ style="background:  linear-gradient(135deg, #0f172a, #1e293b); padding: 5px; text-align: center; color: rgb(248, 7, 7); "
+>
        <h1 style="font-size: 36px; font-weight: bold; color: #facc15; margin-bottom: 10px;">My Projects</h1>
  
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: auto;">
-        
-        <!-- Project 1 -->
-        <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
-            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20143749.png?raw=true" alt="UPBH Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-            <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 15px 0 10px;">UPBH: Unlimited Pdf Book House</h3>
-            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">A versatile eBook Library Application with thousands of books across multiple categories.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">PlayStore</a>
-            <a href="https://github.com/RlM100always/UPBH-Unlimited-Pdf-Book-House" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
-        </div>
+   <div
+    style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto;"
+    >
+    
 
-        <!-- Project 2 -->
-        <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
-            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20142943.png?raw=true" alt="GlobalUniGuide Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-            <h3 style="font-size: 22px; font-weight: bold; margin: 15px 0 10px; color: white;">GlobalUniGuide</h3>
-            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">An educational app providing detailed university information, courses, dictionaries, and exam results.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.alluniversityinformation" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">PlayStore</a>
-            <a href="https://github.com/RlM100always/GlobalUniGuide" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
-        </div>
-
-        <!-- Project 3 -->
-        <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
-            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20143909.png?raw=true" alt="SelfMe Logo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-            <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 15px 0 10px;">SelfMe Android Application</h3>
-            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">An earning & marketing app where users can promote websites and earn by playing games.</p>
-            <a href="https://drive.google.com/file/d/1l129EV-qURme2lS3GFmh675KM0KxHlaa/view" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Download</a>
-            <a href="https://github.com/RlM100always/EarningApp" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
-        </div>
-
-        <!-- Project 4 -->
-        <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
-            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20143949.png?raw=true" alt="BD University Information" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-            <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 15px 0 10px;">BD University Information</h3>
-            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">A platform providing all information about universities in Bangladesh.</p>
-            <a href="https://www.youtube.com/watch?si=zkC5REO7Js7YvLQe&v=zgWeWTUwv4U&feature=youtu.be" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Video</a>
-            <a href="https://github.com/RlM100always/Current-UniversityBD" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
-        </div>
-         <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; border-radius: 10px; padding: 20px; text-align: left; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease-in-out;">
-            <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20144043.png?raw=true" alt="BD University Information" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-            <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 15px 0 10px;">District Service</h3>
-            <p style="font-size: 16px; color: #BBBBBB; margin-bottom: 15px;">District Service is an Android app that provides information about all the districts in Bangladesh. It serves as a comprehensive guide for users to learn about every districts, their information .. 
-            <a href="https://www.youtube.com/watch?v=Wt0VJZ8Yy14" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Youtube</a>
-            <a href="https://github.com/RlM100always/District-Service-App?tab=readme-ov-file" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
-        </div>
-
+    <!-- Project 1 -->
+    <div 
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 10px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;"
+    >
+        <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20143749.png?raw=true" alt="UPBH Logo" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px 8px 0px 0px;">
+        <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 10px">UPBH: Unlimited Pdf Book House</h3>
+        <p style="font-size: 16px; color: #BBBBBB; margin-left: 10px; margin-right: 10px;">A versatile eBook Library Application with thousands of books across multiple categories.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.educationalbooks" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">PlayStore</a>
+        <a href="https://github.com/RlM100always/UPBH-Unlimited-Pdf-Book-House" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
     </div>
+
+    <!-- Project 2 -->
+    <div 
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 10px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;"
+    >
+        <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20142943.png?raw=true" alt="GlobalUniGuide Logo" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px 8px 0px 0px;">
+        <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 10px">GlobalUniGuide</h3>
+        <p style="font-size: 16px; color: #BBBBBB; margin-left: 10px; margin-right: 10px;">An educational app providing detailed university information, courses, dictionaries, and exam results.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.techtravelcoder.alluniversityinformation" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">PlayStore</a>
+        <a href="https://github.com/RlM100always/GlobalUniGuide" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
+    </div>
+
+    <!-- Project 3 -->
+    <div
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 10px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;"
+     >
+        <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20143909.png?raw=true" alt="SelfMe Logo" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px 8px 0px 0px;">
+        <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 10px">SelfMe Android Application</h3>
+        <p style="font-size: 16px; color: #BBBBBB; margin-left: 10px; margin-right: 10px;">An earning & marketing app where users can promote websites and earn by playing games.</p>
+        <a href="https://drive.google.com/file/d/1l129EV-qURme2lS3GFmh675KM0KxHlaa/view" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Download</a>
+        <a href="https://github.com/RlM100always/EarningApp" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
+    </div>
+
+    <!-- Project 4 -->
+    <div
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 10px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;"
+     >
+        <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20143949.png?raw=true" alt="BD University Information" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px 8px 0px 0px;">
+        <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 10px">BD University Information</h3>
+        <p style="font-size: 16px; color: #BBBBBB; margin-left: 10px; margin-right: 10px;">A platform providing all information about universities in Bangladesh.</p>
+        <a href="https://www.youtube.com/watch?v=zgWeWTUwv4U" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Video</a>
+        <a href="https://github.com/RlM100always/Current-UniversityBD" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
+    </div>
+
+    <!-- Project 5 -->
+    <div
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 10px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;"
+     >
+        <img src="https://github.com/RlM100always/Hisab/blob/main/img/Screenshot%202025-02-17%20144043.png?raw=true" alt="District Service" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px 8px 0px 0px;">
+        <h3 style="color: white; font-size: 22px; font-weight: bold; margin: 10px">District Service</h3>
+        <p style="font-size: 16px; color: #BBBBBB; margin-left: 10px; margin-right: 10px;">An Android app providing detailed information about all districts in Bangladesh.</p>
+        <a href="https://www.youtube.com/watch?v=Wt0VJZ8Yy14" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">YouTube</a>
+        <a href="https://github.com/RlM100always/District-Service-App" style="display: inline-block; background: #007BFF; color: #FFFFFF; padding: 8px; margin: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">GitHub</a>
+    </div>
+
+</div>
+
 </section>
 
 
-<section id="achievements"  style="background:  linear-gradient(135deg, #0f172a, #1e293b); padding: 60px 20px; text-align: center; color: white; ">
+<section id="achievements" 
+ style="background:  linear-gradient(135deg, #0f172a, #1e293b); padding: 60px 20px; text-align: center; color: rgb(248, 7, 7); "
+ >
     
     <!-- Section Title -->
     <h1 class="section-title" style="font-size: 32px; font-weight: bold; color: #facc15; margin-bottom: 30px;">
@@ -466,46 +472,54 @@
     </h1>
 
     <!-- Achievements Grid -->
-    <div class="stats-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto;">
+    <div  
+    style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto;"
+    >
 
         <!-- GitHub Trophy Holder -->
-        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+        <div  style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
             <i class="fas fa-trophy" style="font-size: 40px; color: #facc15; margin-bottom: 10px;"></i>
             <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">GitHub Trophy Holder</h3>
         </div>
 
         <!-- Open Source Contributor -->
-        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+        <div style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
             <i class="fas fa-code-branch" style="font-size: 40px; color: #38bdf8; margin-bottom: 10px;"></i>
             <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Open Source Contributor</h3>
         </div>
 
         <!-- CS Student at DU -->
-        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+        <div 
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;"
+        >
             <i class="fas fa-graduation-cap" style="font-size: 40px; color: #34d399; margin-bottom: 10px;"></i>
             <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">CS Student at DU</h3>
         </div>
 
         <!-- Problem Solver -->
-        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+        <div 
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
             <i class="fas fa-chart-line" style="font-size: 40px; color: #f87171; margin-bottom: 10px;"></i>
             <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Problem Solver</h3>
         </div>
 
         <!-- Professional Android Developer -->
-        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+        <div 
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
             <i class="fas fa-mobile-alt" style="font-size: 40px; color: #facc15; margin-bottom: 10px;"></i>
             <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Professional Android Developer</h3>
         </div>
 
         <!-- PHP Full-Stack Developer -->
-        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+        <div 
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
             <i class="fas fa-server" style="font-size: 40px; color: #f87171; margin-bottom: 10px;"></i>
             <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Python Full-Stack Developer</h3>
         </div>
 
         <!-- Published Android Apps -->
-        <div class="stat-card" style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 220px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
+        <div 
+        style="background:  linear-gradient(135deg, #0f172a, #1e293b); ; padding: 30px; border-radius: 15px; width: 270px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); transition: 0.3s;">
             <i class="fas fa-cloud-upload-alt" style="font-size: 40px; color: #34d399; margin-bottom: 10px;"></i>
             <h3 style="font-size: 18px; color: aliceblue; font-weight: bold;">Published Android Apps</h3>
         </div>
